@@ -1,7 +1,7 @@
 <template>
   <h1>Reaction Timer</h1>
   <button @click="start" :disabled="isPlaying">Play</button>
-  <Block v-if="isPlaying" :delay="delay"/>
+  <Block v-if="isPlaying" :delay="delay" :id="id"/>
 </template>
 
 <script>
@@ -11,12 +11,12 @@ export default {
   name: 'App',
   components: {
     Block, 
-    // 'Results'
   },
   data() {
     return {
       isPlaying: false,
-      delay: null
+      delay: null,
+      id: 'custom'
     }
   },
   methods: {
